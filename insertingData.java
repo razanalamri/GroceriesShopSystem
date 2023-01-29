@@ -24,7 +24,7 @@ public class insertingData {
      float Unit_price=scanner1.nextFloat();
      System.out.println("Please Enter the Quntity");
      Integer Quntity=scanner1.nextInt();
-     float Qty=Unit_price/Unit_price;
+     float Qty=Unit_price*Quntity;
 
    
      String sql = "insert into Item values('"+Item_Name+"', '"+Unit_price+"', '"+Quntity+"', '"+Qty+"')";
@@ -81,7 +81,7 @@ public class insertingData {
 	     System.out.println("Please Enter Paid Amount");
 	     float Paid_Amount=scanner1.nextFloat();
 	     System.out.println("Please Enter the Balance");
-	     float Balance=scanner1.nextFloat();
+	     float Balance=Paid_Amount-Total_Amount;
 	
 	   
 	     String sql = "insert into Customer values('"+Invoice_No+"', '"+Invoice_date+"', '"+Customer_Name+"', '"+Phone_Number+"','"+Number_Of_Items+"', "
