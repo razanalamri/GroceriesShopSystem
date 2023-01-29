@@ -38,7 +38,7 @@ public class ReportAllItems {
 			    	 Integer Quntity=result.getInt("Quntity");
 			    	 float Qty=result.getFloat("Qty");
 			    	
-			    	 
+			    	 Testing
 	   	  System.out.println(Item_Name+" "+Unit_price+" "+Quntity+" "+Qty);
 	   	  count++;
 	      
