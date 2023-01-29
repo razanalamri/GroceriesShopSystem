@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class menu {
+	
 	static Scanner scanner1=new Scanner(System.in);
 
 	public static void showMenu(){
 	System.out.println("Welcome");
-	System.out.println("1-Shop Settings");
+	System.out.println("1- Shop Settings");
 	System.out.println("2- Manage Shop Items");
 	System.out.println("3- Create New Invoice");
 	System.out.println("4- Report: Statistics");
@@ -22,6 +23,7 @@ public class menu {
 	 switch(option){
 	 
 	 case 1:
+		 insertingData.insertingDataIntoItemTable();
 		 
 		 break;
 		 
