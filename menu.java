@@ -23,11 +23,11 @@ public class menu {
 	 switch(option){
 	 
 	 case 1:
-		 insertingData.insertingDataIntoItemTable();
-		 
+		 showSubMenu1();
 		 break;
 		 
 	 case 2:
+		 showSubMenu2();
 		 
 		 break;
 		 
@@ -69,7 +69,8 @@ public class menu {
 		 switch(option2){
 		 
 		 case 1:
-			 
+			 //insertingData.insertingDataIntoItemTable();
+			 insertingData.insertingDataIntoCustomerTable();
 			 break;
 			 
 		 case 2:
