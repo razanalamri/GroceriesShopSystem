@@ -69,15 +69,16 @@ public class menu {
 		 switch(option2){
 		 
 		 case 1:
-			 //insertingData.insertingDataIntoItemTable();
+			 insertingData.insertingDataIntoItemTable();
 			 insertingData.insertingDataIntoCustomerTable();
 			 break;
 			 
 		 case 2:
-			 
+			 insertingData.insertingDataIntoShopTable();
 			 break;
 			 
 		 case 3:
+			 insertingData.insertingDataIntoHeaderTable();
 			 
 			 break;
 			 

@@ -115,6 +115,96 @@ public class insertingData {
 	         System.err.println(ex);
 		 
 	 }}}
+	
+	public static void insertingDataIntoShopTable() {
+		
+	 	 System.out.println("Please type the number of rows");
+	     int userinput =scanner1.nextInt();
+	     for(int i=1; i<=userinput;i++) {
+	     System.out.println("Please Enter Shop Name");
+	     String Shop_Name=scanner1.next();
+
+
+	   
+	     String sql = "insert into Shop values('"+Shop_Name+"')";
+	     Connection con = null;
+	     try {
+
+	         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	   
+	         DriverManager.registerDriver(driver);
+
+	       
+	         con = DriverManager.getConnection(url, user,
+	                 pass);
+
+	       
+	         Statement st = con.createStatement();
+
+	       
+	         int m = st.executeUpdate(sql);
+	         if (m >=  0)
+	             System.out.println("Data insearted successfully Into Shop Table");
+	         else
+	             System.out.println("insert failed");
+
+	         
+	         con.close();
+	     }
+	     catch (Exception ex) {
+
+	         System.err.println(ex);
+		 
+	 }}}
+	
+	
+	
+	public static void insertingDataIntoHeaderTable() {
+		
+	 	 System.out.println("Please type the number of rows");
+	     int userinput =scanner1.nextInt();
+	     for(int i=1; i<=userinput;i++) {
+	     System.out.println("Please Enter Telephone Number");
+	     String Tel=scanner1.next();
+	     System.out.println("Please Enter Fax Number");
+	     String Fax=scanner1.next();
+	     System.out.println("Please Enter Email");
+	     String Email=scanner1.next();
+	     System.out.println("Please Enter website");
+	     String Website=scanner1.next();
+
+
+	     String sql = "insert into Header values('"+Tel+"','"+Fax+"','"+Email+"','"+Website+"')";
+	     Connection con = null;
+	     try {
+
+	         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	   
+	         DriverManager.registerDriver(driver);
+
+	       
+	         con = DriverManager.getConnection(url, user,
+	                 pass);
+
+	       
+	         Statement st = con.createStatement();
+
+	       
+	         int m = st.executeUpdate(sql);
+	         if (m >=  0)
+	             System.out.println("Data insearted successfully Into Header Table");
+	         else
+	             System.out.println("insert failed");
+
+	         
+	         con.close();
+	     }
+	     catch (Exception ex) {
+
+	         System.err.println(ex);
+		 
+	 }}}
+		
 
 	
 	
