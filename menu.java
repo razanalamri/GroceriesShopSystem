@@ -47,6 +47,7 @@ public class menu {
 		 
 		 
 	 case 6:
+		 Search.searchinOfInvoice();
 		 
 		 break;
 		 
