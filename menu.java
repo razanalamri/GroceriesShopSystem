@@ -37,6 +37,7 @@ public class menu {
 		 break;
 		 
 	 case 4:
+		 reportOfInvoice.ReportItems();
 		 
 		 break;
 		 
