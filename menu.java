@@ -104,6 +104,7 @@ public class menu {
 					 break;
 					 
 				 case 2:
+					deleteItem.deleteItem();
 					 
 					 break;
 					 
