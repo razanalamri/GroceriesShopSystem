@@ -32,6 +32,7 @@ public class menu {
 		 break;
 		 
 	 case 3:
+		 newInvoice.addingNewInvoice();
 		 
 		 break;
 		 
