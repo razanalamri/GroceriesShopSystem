@@ -109,6 +109,7 @@ public class menu {
 					 break;
 					 
 				 case 3:
+					 changeprice.changingPriceOfItem();
 					 
 					 break;
 					 
