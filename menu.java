@@ -98,6 +98,7 @@ public class menu {
 				 switch(option2){
 				 
 				 case 1:
+					 newItem.addingNewItem();
 					 
 					 
 					 break;
