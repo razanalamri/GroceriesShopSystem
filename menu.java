@@ -37,12 +37,12 @@ public class menu {
 		 break;
 		 
 	 case 4:
-		 reportOfInvoice.ReportItems();
+		 reportOfInvoice.ReportStatisticsItems();
 		 
 		 break;
 		 
 	 case 5:
-		 
+		 reportOfInvoice.ReportAllItems();
 		 break;
 		 
 		 

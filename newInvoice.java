@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class newInvoice {
+public class newInvoice implements Serializable{
 	static Scanner scanner1=new Scanner(System.in);
 	static String url = "jdbc:sqlserver://localhost:1433;databaseName=GroceriesShopSystem;encrypt=true;trustServerCertificate=true";
 	static String user = "sa";
