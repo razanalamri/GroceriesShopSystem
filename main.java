@@ -10,15 +10,25 @@ import java.util.Stack;
     	 System.out.println("\n---------Welcome---------");
 		 boolean login=true;
 		 while(login=true) {
+			 System.out.println("Please Enter the database url  :");
+			 String url=scanner1.next();
 			 System.out.println("Please Enter the database user :");
 			 String user=scanner1.next();
-			 
+			 try {
+				 if(!url.equals("jdbc:sqlserver://localhost:1433;databaseName=GroceriesShopSystem;encrypt=true;trustServerCertificate=true")) {
+					 throw new Exception("Url is Not found");
+				 }}
+	 		 catch(Exception e) {
+				 System.out.println("Exception :"+e.getMessage());
+				 continue;}
+				 
 			 try {
 				 if(!user.equals("sa")) {
 					 throw new Exception("User Name is Not found");
 				 }}
-	 		 catch(Exception e) {
-				 System.out.println("Exception :"+e.getMessage());
+			 
+	 		 catch(Exception x) {
+				 System.out.println("Exception :"+x.getMessage());
 				 continue;
 			 }
 			if (user.equals("sa")) {
@@ -26,7 +36,7 @@ import java.util.Stack;
 				String root=scanner1.next();
 				stack1.push(root);
 			try {
-				if(user.equals("sa")&&root.equals("root"))
+				if(url.equals("jdbc:sqlserver://localhost:1433;databaseName=GroceriesShopSystem;encrypt=true;trustServerCertificate=true")&&user.equals("sa")&&root.equals("root"))
 				{
 			     System.out.println("Connnections Done successfully");
 				}
@@ -35,8 +45,8 @@ import java.util.Stack;
 					throw new Exception("password is Not found");
 				}
 				}
-			 catch(Exception e) {
-				 System.out.println("Exception :"+e.getMessage());
+			 catch(Exception s) {
+				 System.out.println("Exception :"+s.getMessage());
 				 continue;
 			 }    
 		     
