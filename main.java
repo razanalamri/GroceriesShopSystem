@@ -3,7 +3,7 @@ import java.util.Stack;
 
     public class main {
 	
-	static Stack stack1=new Stack(); 
+	
 	static Scanner scanner1=new Scanner(System.in);
      public static void main(String[]args) {
     	 
@@ -34,7 +34,7 @@ import java.util.Stack;
 			if (user.equals("sa")) {
 				System.out.println("Please Enter the database Password:");
 				String root=scanner1.next();
-				stack1.push(root);
+				
 			try {
 				if(url.equals("jdbc:sqlserver://localhost:1433;databaseName=GroceriesShopSystem;encrypt=true;trustServerCertificate=true")&&user.equals("sa")&&root.equals("root"))
 				{
@@ -66,7 +66,7 @@ import java.util.Stack;
     	 }
     	 
 	 int option=scanner1.nextInt();
-	 stack1.push(option);
+	
 	 
 	
 
@@ -78,7 +78,7 @@ import java.util.Stack;
     		 System.out.println(m);
     	 }
     		int option2=scanner1.nextInt();
-    		stack1.push(option2);
+    		
     		
     		 switch(option2){
     		 
@@ -109,7 +109,7 @@ import java.util.Stack;
     		 System.out.println(m);
     	 }
 		 int option3=scanner1.nextInt();
-			stack1.push(option3);
+			
 			 boolean isExitMenu3=true;
 			 switch(option3){
 			 
