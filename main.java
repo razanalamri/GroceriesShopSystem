@@ -168,7 +168,14 @@ import java.util.Stack;
 		 break;
 		 
 	 case 8:
+		 System.out.println("Are You sure you want to exit ?");
+		 String exit=scanner1.next();
+		 if(!exit.equals("no")) {
 		 isExitMenu1=false;
+		 }
+		 else {
+			 isExitMenu1=true;
+		 }
 
 		 
 		 
