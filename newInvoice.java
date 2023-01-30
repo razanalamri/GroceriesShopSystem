@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class newInvoice implements Serializable{
+public class newInvoice {
 	static Scanner scanner1=new Scanner(System.in);
 	static String url = "jdbc:sqlserver://localhost:1433;databaseName=GroceriesShopSystem;encrypt=true;trustServerCertificate=true";
 	static String user = "sa";

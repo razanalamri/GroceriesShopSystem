@@ -32,7 +32,6 @@ public class ReportAllItems {
 		         String sql="SELECT * FROM Item";
 			     ResultSet result=st.executeQuery(sql);
 			     while(result.next()&&count<userinput) {
-			    	 
 			    	 String Item_Name=result.getString("Item_Name");
 			    	 float Unit_price=result.getFloat("Unit_price");
 			    	 Integer Quntity=result.getInt("Quntity");

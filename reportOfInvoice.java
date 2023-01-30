@@ -39,7 +39,7 @@ public class reportOfInvoice {
 				    	
 				    	
 				    
-		   	  System.out.println(Invoice_No+" "+Number_Of_Items+" "+Total_Amount);
+		   	  System.out.println("Invoice No "+Invoice_No+", Number Of Items "+Number_Of_Items+", Total Amount "+Total_Amount);
 		   	  count++;
 		      
 		      
@@ -97,7 +97,7 @@ public class reportOfInvoice {
 			
 				    	 System.out.println("Shop Name :"+Shop_Name);
 				    	 System.out.println("Telephone :"+Tel+"------Fax :"+Fax+"-------Website :"+Website);
-		   	  System.out.println(Invoice_No+" "+Invoice_date+" "+Customer_Name+" "+Number_Of_Items+" "+Total_Amount+" "+Balance+" "+Item_Name+" "+Unit_price+" "+Quntity+" "+Qty);
+		   	  System.out.println("Invoice_No: "+Invoice_No+" ,Invoice date: "+Invoice_date+" ,Customer Name: "+Customer_Name+" ,Number_Of_Items: "+Number_Of_Items+" ,Total Amount: "+Total_Amount+" ,Balance: "+Balance+" ,Item Name: "+Item_Name+" ,Unit price "+Unit_price+" ,Quntity: "+Quntity+" ,Qty:  "+Qty);
 		   	  count++;
 		      
 		      
