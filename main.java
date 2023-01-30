@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -6,6 +8,7 @@ import java.util.Stack;
 	
 	static Scanner scanner1=new Scanner(System.in);
      public static void main(String[]args) {
+    	 Map<String, Integer> count = ProgramStatistics.getHistory();
     	 
     	 System.out.println("\n---------Welcome---------");
 		 boolean login=true;
@@ -73,7 +76,7 @@ import java.util.Stack;
 	 switch(option){
 	
 	 case 1:
-			
+		 count.put("Shop Settings",count.get("Shop Settings")+1);	
     	 for(String m :menu.showSubMenu1()) {
     		 System.out.println(m);
     	 }
@@ -83,6 +86,7 @@ import java.util.Stack;
     		 switch(option2){
     		 
     		 case 1:
+    			 
     			 insertingData.insertingDataIntoItemTable();
     			 insertingData.insertingDataIntoCustomerTable();
     			 break;
@@ -105,6 +109,7 @@ import java.util.Stack;
     		 
 		 
 	 case 2:
+		 count.put("Manage Shop Items",count.get("Manage Shop Items")+1);	
 		 for(String m :menu. showSubMenu2()) {
     		 System.out.println(m);
     	 }
@@ -143,31 +148,39 @@ import java.util.Stack;
 		 break;
 		 
 	 case 3:
+		 count.put("Create New Invoice",count.get("Create New Invoice")+1);
 		 newInvoice.addingNewInvoice();
 		 
 		 break;
 		 
 	 case 4:
+		 count.put("Report: Statistics",count.get("Report: Statistics")+1);
 		 reportOfInvoice.ReportStatisticsItems();
 		 
 		 break;
 		 
 	 case 5:
+		
+		 count.put("Report: All Invoices",count.get("Report: All Invoices")+1);
 		 reportOfInvoice.ReportAllItems();
 		 break;
 		 
 		 
 	 case 6:
+		 count.put("Search (1) Invoice",count.get("Search (1) Invoice")+1);
 		 Search.searchinOfInvoice();
 		 
 		 break;
 		 
 	 case 7:
-		 ProgramStatistics.getHistory();
-		 
+		 count.put("Program Statistics",count.get("Program Statistics")+1);
+		 for (Map.Entry<String, Integer> val : count.entrySet()) {
+			 System.out.println("Item : "+val.getKey()+" occurs : "+val.getValue());
+		 }
 		 break;
 		 
 	 case 8:
+		 count.put("Exit",count.get("Exit")+1);
 		 System.out.println("Are You sure you want to exit ?");
 		 String exit=scanner1.next();
 		 if(!exit.equals("no")) {
