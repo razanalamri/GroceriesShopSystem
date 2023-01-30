@@ -6,6 +6,49 @@ import java.util.Stack;
 	static Stack stack1=new Stack(); 
 	static Scanner scanner1=new Scanner(System.in);
      public static void main(String[]args) {
+    	 
+    	 System.out.println("\n---------Welcome---------");
+		 boolean login=true;
+		 while(login=true) {
+			 System.out.println("Please Enter the database user :");
+			 String user=scanner1.next();
+			 
+			 try {
+				 if(!user.equals("sa")) {
+					 throw new Exception("User Name is Not found");
+				 }}
+	 		 catch(Exception e) {
+				 System.out.println("Exception :"+e.getMessage());
+				 continue;
+			 }
+			if (user.equals("sa")) {
+				System.out.println("Please Enter the database Password:");
+				String root=scanner1.next();
+				stack1.push(root);
+			try {
+				if(user.equals("sa")&&root.equals("root"))
+				{
+			     System.out.println("Connnections Done successfully");
+				}
+				else {
+					login=false;
+					throw new Exception("password is Not found");
+				}
+				}
+			 catch(Exception e) {
+				 System.out.println("Exception :"+e.getMessage());
+				 continue;
+			 }    
+		     
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
 	boolean isExitMenu1=true;
 	while(isExitMenu1) {
     	 for(String m :menu.showMainMenu()) {
@@ -127,5 +170,5 @@ import java.util.Stack;
 	
 	
 	
-}}
+}}}}
 
