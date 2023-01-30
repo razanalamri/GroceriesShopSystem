@@ -6,7 +6,8 @@ import java.util.Stack;
 	static Stack stack1=new Stack(); 
 	static Scanner scanner1=new Scanner(System.in);
      public static void main(String[]args) {
-	
+	boolean isExitMenu1=true;
+	while(isExitMenu1) {
     	 for(String m :menu.showMainMenu()) {
     		 System.out.println(m);
     	 }
@@ -14,9 +15,10 @@ import java.util.Stack;
 	 int option=scanner1.nextInt();
 	 stack1.push(option);
 	 
-	 
+	
+
 	 switch(option){
-	 
+	
 	 case 1:
 			
     	 for(String m :menu.showSubMenu1()) {
@@ -43,9 +45,11 @@ import java.util.Stack;
     			 
     		 case 4:
     			 
+    			 isExitMenu1=true;
+    			
     		 }
-    		
-		
+    		 break;
+    		 
 		 
 	 case 2:
 		 for(String m :menu. showSubMenu2()) {
@@ -53,6 +57,7 @@ import java.util.Stack;
     	 }
 		 int option3=scanner1.nextInt();
 			stack1.push(option3);
+			 boolean isExitMenu3=true;
 			 switch(option3){
 			 
 			 case 1:
@@ -77,8 +82,10 @@ import java.util.Stack;
 				 break;
 				 
 			 case 5 :
+				 isExitMenu1=true;
 				 
 			 }
+		
 		 
 		 break;
 		 
@@ -108,7 +115,8 @@ import java.util.Stack;
 		 break;
 		 
 	 case 8:
-		 System.exit(0);
+		 isExitMenu1=false;
+
 		 
 		 
 		 
@@ -119,5 +127,5 @@ import java.util.Stack;
 	
 	
 	
-}
+}}
 
