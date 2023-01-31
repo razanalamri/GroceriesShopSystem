@@ -175,7 +175,7 @@ import java.util.Stack;
 	 case 7:
 		 count.put("Program Statistics",count.get("Program Statistics")+1);
 		 for (Map.Entry<String, Integer> val : count.entrySet()) {
-			 System.out.println("Item : "+val.getKey()+" occurs : "+val.getValue());
+			 System.out.println(val.getKey()+" occurs : "+val.getValue());
 		 }
 		 break;
 		 

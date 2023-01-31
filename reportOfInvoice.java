@@ -68,9 +68,7 @@ public class reportOfInvoice {
 				    	 
 				    	 
 				    	 
-				    	 
-				    	 
-				    	 
+				    	
 				    	
 				    	Integer Invoice_No=result.getInt("Invoice_No");
 				    	String Invoice_date=result.getString("Invoice_date");
