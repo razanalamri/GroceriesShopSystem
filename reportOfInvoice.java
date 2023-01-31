@@ -28,15 +28,15 @@ public class reportOfInvoice {
 				         // Creating a statement
 				         Statement st = con.createStatement();
 				        
-				         String sql="SELECT COUNT(Invoice_No) AS NumberOfInvoice,COUNT(Number_Of_Items) AS NumberOfItems,SUM(Total_Amount) AS TotalSales FROM Customer;";
+				         String sql="SELECT COUNT(Invoice_No) AS NumberOfInvoice,SUM(Number_Of_Items) AS NumberOfItems,SUM(Total_Amount) AS TotalSales FROM Customer;";
 					     ResultSet result=st.executeQuery(sql);
-					
-					    	 int Invoice_No=result.getInt("Invoice_No");
-					    	 int Number_Of_Items=result.getInt("Number_Of_Items");
-					    	 float Total_Amount=result.getFloat("Total_Amount");
+					while(result.next()) {
+					    	 String NumberOfInvoice=result.getString("NumberOfInvoice");
+					    	 String NumberOfItems=result.getString("NumberOfItems");
+					    	 String TotalSales=result.getString("TotalSales");
 					    	  
-			   	  System.out.println(Invoice_No+" "+Number_Of_Items+" "+Total_Amount);
-					 }
+			   	  System.out.println("Number of Invoice : "+ NumberOfInvoice+", Number of Items : "+NumberOfItems+", Total Sales : "+TotalSales);
+					 }}
 		  catch (Exception ex) {
 
 		      System.err.println(ex);
