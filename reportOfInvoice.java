@@ -16,34 +16,27 @@ public class reportOfInvoice {
 			
 			
 			 Connection con = null;
-				 try{
-					 Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-					 DriverManager.registerDriver(driver);
+				 
+					 try{
+						 Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+						 DriverManager.registerDriver(driver);
 
-			         // Reference to connection interface
-			         con = DriverManager.getConnection(url, user,
-			                 pass);
+				         // Reference to connection interface
+				         con = DriverManager.getConnection(url, user,
+				                 pass);
 
-			         // Creating a statement
-			         Statement st = con.createStatement();
-			         System.out.println("Please Enter the number of rows :");
-			         int userinput=scanner1.nextInt();
-			         int count=0;
-			         String sql="SELECT Invoice_No,Number_Of_Items,Total_Amount FROM Customer";
-				     ResultSet result=st.executeQuery(sql);
-				     while(result.next()&&count<userinput) {
-				    	
-				    	Integer Invoice_No=result.getInt("Invoice_No");
-				    	 Integer Number_Of_Items=result.getInt("Number_Of_Items");
-				    	 float Total_Amount=result.getFloat("Total_Amount");
-				    	
-				    	
-				    
-		   	  System.out.println("Invoice No "+Invoice_No+", Number Of Items "+Number_Of_Items+", Total Amount "+Total_Amount);
-		   	  count++;
-		      
-		      
-		  }}
+				         // Creating a statement
+				         Statement st = con.createStatement();
+				        
+				         String sql="SELECT COUNT(Invoice_No) AS NumberOfInvoice,COUNT(Number_Of_Items) AS NumberOfItems,SUM(Total_Amount) AS TotalSales FROM Customer;";
+					     ResultSet result=st.executeQuery(sql);
+					
+					    	 int Invoice_No=result.getInt("Invoice_No");
+					    	 int Number_Of_Items=result.getInt("Number_Of_Items");
+					    	 float Total_Amount=result.getFloat("Total_Amount");
+					    	  
+			   	  System.out.println(Invoice_No+" "+Number_Of_Items+" "+Total_Amount);
+					 }
 		  catch (Exception ex) {
 
 		      System.err.println(ex);
