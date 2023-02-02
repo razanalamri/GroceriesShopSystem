@@ -87,6 +87,8 @@ public class main {
 
 							insertingData.insertingDataIntoItemTable();
 							insertingData.insertingDataIntoCustomerTable();
+							insertingData.insertingDataIntoShopTable();
+							insertingData.insertingDataIntoHeaderTable();
 							break;
 
 						case 2:

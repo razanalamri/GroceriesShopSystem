@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.Random;
 import java.util.Scanner;
@@ -24,32 +25,32 @@ public class insertingData {
      float Unit_price=scanner1.nextFloat();
      System.out.println("Please Enter the Quntity");
      Integer Quntity=scanner1.nextInt();
-     float Qty=Unit_price*Quntity;
+     System.out.println("Please Enter the Qty");
+     float Qty=scanner1.nextFloat();
 
    
-     String sql = "insert into Item values('"+Item_Name+"', '"+Unit_price+"', '"+Quntity+"', '"+Qty+"')";
-     Connection con = null;
-     try {
+     String sql = "insert into Item(Item_Name,Unit_price,Quntity,Qty)VALUES(?,?,?,?)";
+  			Connection con = null;
+  	
 
-         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-   
-         DriverManager.registerDriver(driver);
+  			
+  			try { 
+  				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+  				DriverManager.registerDriver(driver);
+  				con = DriverManager.getConnection(url, user, pass);
+  				PreparedStatement ps = con.prepareStatement(sql);
+  				ps.setString(1, Item_Name);
+  				ps.setFloat(2, Unit_price);
+  				ps.setFloat(3, Quntity);
+  				ps.setFloat(4, Qty);
+  			
+  				ps.executeUpdate();
 
-       
-         con = DriverManager.getConnection(url, user,
-                 pass);
-
-       
-         Statement st = con.createStatement();
-
-       
-         int m = st.executeUpdate(sql);
-         if (m >=  0)
-             System.out.println("Data insearted successfully Into Items Table");
-         else
-             System.out.println("insert failed");
-
-         
+  	       
+  	        
+  	             System.out.println("Data insearted successfully Into Items Table");
+  	  
+  
          con.close();
      }
      catch (Exception ex) {
@@ -81,31 +82,33 @@ public class insertingData {
 	     System.out.println("Please Enter Paid Amount");
 	     float Paid_Amount=scanner1.nextFloat();
 	     System.out.println("Please Enter the Balance");
-	     float Balance=Paid_Amount-Total_Amount;
+	     float Balance=scanner1.nextFloat();
 	
 	   
-	     String sql = "insert into Customer values('"+Invoice_No+"', '"+Invoice_date+"', '"+Customer_Name+"', '"+Phone_Number+"','"+Number_Of_Items+"', "
-	     		+"'"+Total_Amount+"', '"+Paid_Amount+"', '"+Balance+"')";
-	     Connection con = null;
-	     try {
+	     String sql = "insert into Customer(Invoice_No,Invoice_date,Customer_Name,Phone_Number,Number_Of_Items,Total_Amount,Paid_Amount,Balance)VALUES(?,?,?,?,?,?,?,?)";
+			Connection con = null;
+	
 
-	         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-	   
-	         DriverManager.registerDriver(driver);
+			
+			try { 
+				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+				DriverManager.registerDriver(driver);
+				con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setInt(1, Invoice_No);
+				ps.setString(2, Invoice_date);
+				ps.setString(3, Customer_Name);
+				ps.setInt(4, Phone_Number);
+				ps.setInt(5, Number_Of_Items);
+				ps.setFloat(6, Total_Amount);
+				ps.setFloat(7, Paid_Amount);
+				ps.setFloat(8, Balance);
+				ps.executeUpdate();
 
 	       
-	         con = DriverManager.getConnection(url, user,
-	                 pass);
-
-	       
-	         Statement st = con.createStatement();
-
-	       
-	         int m = st.executeUpdate(sql);
-	         if (m >=  0)
+	        
 	             System.out.println("Data insearted successfully Into Customers Table");
-	         else
-	             System.out.println("insert failed");
+	  
 
 	         
 	         con.close();
@@ -126,27 +129,23 @@ public class insertingData {
 
 
 	   
-	     String sql = "insert into Shop values('"+Shop_Name+"')";
-	     Connection con = null;
-	     try {
+	     String sql = "insert into Shop(Shop_Name)VALUES(?)";
+			Connection con = null;
+	
 
-	         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-	   
-	         DriverManager.registerDriver(driver);
-
-	       
-	         con = DriverManager.getConnection(url, user,
-	                 pass);
-
-	       
-	         Statement st = con.createStatement();
+			
+			try { 
+				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+				DriverManager.registerDriver(driver);
+				con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setString(1,Shop_Name);
+				ps.executeUpdate();
 
 	       
-	         int m = st.executeUpdate(sql);
-	         if (m >=  0)
+	     
 	             System.out.println("Data insearted successfully Into Shop Table");
-	         else
-	             System.out.println("insert failed");
+	       
 
 	         
 	         con.close();
@@ -173,28 +172,30 @@ public class insertingData {
 	     System.out.println("Please Enter website");
 	     String Website=scanner1.next();
 
-
-	     String sql = "insert into Header values('"+Tel+"','"+Fax+"','"+Email+"','"+Website+"')";
-	     Connection con = null;
-	     try {
-
-	         Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	     
 	   
-	         DriverManager.registerDriver(driver);
+			String sql = "insert into Header(Tel,Fax,Email,Website)VALUES(?,?,?,?)";
+			Connection con = null;
+	
+
+			
+			try { 
+				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+				DriverManager.registerDriver(driver);
+				con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setString(1, Tel);
+				ps.setString(2, Fax);
+				ps.setString(3, Email);
+				ps.setString(4, Website);
+				ps.executeUpdate();
 
 	       
-	         con = DriverManager.getConnection(url, user,
-	                 pass);
-
-	       
-	         Statement st = con.createStatement();
-
-	       
-	         int m = st.executeUpdate(sql);
-	         if (m >=  0)
+	        
+	     
 	             System.out.println("Data insearted successfully Into Header Table");
-	         else
-	             System.out.println("insert failed");
+	      
+	            
 
 	         
 	         con.close();
