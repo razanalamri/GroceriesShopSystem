@@ -60,8 +60,17 @@ public class main {
 					for (String m : menu.showMainMenu()) {
 						System.out.println(m);
 					}
+					
 
 					int option = scanner1.nextInt();
+				    try {
+						 if(option>8) {
+							 throw new Exception("Please type number between 1 to 8 Only");
+						 }}
+			 		 catch(Exception e) {
+						 System.out.println("Exception :"+e.getMessage());
+						 continue;
+					 }
 
 					switch (option) {
 
